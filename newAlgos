@@ -1,0 +1,272 @@
+// // longestWord
+// function longestWord(str){
+//      var words = str.split(' ')
+//      var maxLength = 0;
+//      for (var i = 0; i<words.length; i++){
+//           if(words[i].length > maxLength){
+//                maxLength = words[i].length
+//           }
+//      }
+//      return maxLength
+// }
+// console.log(longestWord("the quick brown fox jumped"))
+
+// var revString = (str) => {
+//      // var newStr = ""
+//      // // str.split('')
+//      // for(var i = str.length - 1;i>=0;i--){
+//      //      newStr += str[i]
+//      // }
+//      // return newStr
+
+//      var x = str.split('').reverse('').join("")
+//      return x
+// }
+// console.log(revString("hello"))
+
+// fatorial --- product of all positive interegers less than or equal to that number
+
+// var factorialize = (num) => {
+//      // var product = 1
+//      // for (var i = num;i>0;i--){
+//      //      console.log("aa",i)
+//      //      product *= i
+//      // }
+//      // return product
+
+//      // if(num === 0){
+//      //      return 1
+//      // }
+//      // return num * factorialize(num -1)
+
+//      for( var a = 1;num >= 1; num--){
+//           a*=num
+//      }
+//      return a
+// }
+// console.log(factorialize(4))
+
+// polindrome--- its a string if we do frwd or bckwrd string shuld be same (SAS)
+// var polind = (str) => {
+//      var str = str.toLowerCase()
+//      var reverStr = str.toLowerCase().split('').reverse('').join('')
+//      if(str === reverStr) return true
+//      return false
+// }
+// console.log(polind("RaCecAr"))
+
+// 1st word caps
+
+// var titleCase = (str) => {
+//      var convertToArray = str.toLowerCase().split(' ');
+//      var result = convertToArray.map(val => {
+//          return val.replace(val.charAt(0), val.charAt(0).toUpperCase())
+//      }) ;
+//      return result.join(' ')   
+// }
+// console.log(titleCase("I'm a little tea pot"))
+
+// var titleCase1 = (str) => {
+//      var abc = str.split(' ')
+//      for (var i=0; i < abc.length; i++) {
+//           abc[i] = abc[i].toLowerCase().split('')
+//           abc[i][0] = abc[i][0].toUpperCase()
+//           abc[i] = abc[i].join('')
+//      }
+//      return abc.join(' ')
+// }
+// console.log(titleCase1("I'm a little tea pot"))
+
+//largestNumb in arr
+// var numArr = [
+//      [564,999,345,876],
+//      [123,456,143,878],
+//      [443,231,635,111],
+//      [444,555,666,777]
+// ]
+
+// var largestNumb = (arr) => {
+//      var results = []
+//      for (var i = 0; i < arr.length; i++){
+//           largestNumb = arr[i][0]
+//           for (var j = 0; j < arr[i].length; j++){
+//                if(arr[i][j] > largestNumb){
+//                     largestNumb = arr[i][j]
+//                }
+//           }
+//           results[i] = largestNumb
+//      }
+//      return results
+// }
+
+// var largestNumb = (arr) => {
+//      return arr.map(group => {
+//           return group.reduce((prev,current) => {
+//                return (current > prev) ? current : prev
+//           })
+//      })
+// }
+// console.log(largestNumb(numArr))
+
+// var confirmEnding = (str, target) => {
+//      // return str.substr(-target.length) === target
+//      if(str.substr(str.length - target.length, str.length) !== target){
+//           return false
+//      } else {
+//           return true
+//      }
+//      return str
+// }
+// console.log(confirmEnding('He has to give me tane', 'tane'))
+
+// function repeatStr(str, num) {
+//      // if(num > 0){
+//      //     return str.repeat(num)
+//      // }
+//      // return "";
+//      return num > 0 ? str.repeat(num) : '';
+// }
+// console.log(repeatStr("Abdullah",4))
+
+// var truncateString = (str, num) => {
+//      // if(str.length > num && num > 3){
+//      //     return str.slice(0, (num - 3))+"..." 
+//      // }else if(str.length > num && num <=3){
+//      //      return str.slice(0,num) + '...'
+//      // } else{
+//      //      return str
+//      // }
+
+//      if(str.length > num){
+//         return str.slice(0, num > 3 ? num -3 : num) + '...';  
+//      }
+//      return str
+
+// }
+// console.log(truncateString('Orange', 6))
+
+// chunkyMonkey
+// var chunkyMonkey = (arr, size) => {
+//      var temp = []
+//      var result = []
+//      for (var a = 0;a < arr.length;a++){
+//           if (a % size !== size-1) {
+//                temp.push(arr[a])
+//           } else {
+//                temp.push(arr[a])
+//                result.push(temp);
+//                temp = []
+//           }
+//      }
+//      if (temp.length !== 0)
+//           result.push(temp)
+//      return result
+// }
+// console.log(chunkyMonkey([1,2,3,4,5,6],2))
+
+// var chunkyMonkey = (arr, size) => {
+//      var arr2 = []
+//      for (var i = 0; i < arr.length; i += size){
+//           arr2.push(arr.slice(i, i+size))
+//      }
+//      return arr2;
+// }
+// console.log(chunkyMonkey([1,2,3,4,5,6],2))
+
+// var chunkyMonkey = (arr, size) => {
+//      var newArr = []
+//      while(arr.length){
+//           newArr.push(arr.splice(0,size))
+//      }
+//      return newArr
+// }
+// console.log(chunkyMonkey([1,2,3,4,5,6],2))
+
+// var chopOff = (arr, howMany) => {
+//      // arr.splice(0,howMany)
+//      // return arr
+//      return arr.slice(howMany)
+// }
+// console.log(chopOff([1,2,3,4,5,6],4))
+
+// var mutation = (arr) => {
+//      var test = arr[0].toLowerCase()
+//      var target = arr[1].toLowerCase()
+//      for(var i = 0; i < target.length; i++){
+//           if(test.indexOf(target[i]) === -1){
+//                return false
+//           }
+//      }
+//      return true
+// }
+// console.log(mutation(["Hello","hello"]))
+
+// var falsyArr = (arr)=> {
+//      return arr.filter(Boolean)
+// }
+// console.log(falsyArr([0,1,2,undefined,"123",3,4,NaN,false,11,0]))
+
+// var initialArr = [11,23,83,41,95,36,66,97]
+// var newArr = [11,33,88,41,66,8,4]
+// var destroyer = (arr, arr1) => {
+//      // for(var i = 0;i < arr.length; i++){
+//      //      for(var j = 0;j < arr1.length;j++){
+//      //           if(arr[i] === arr1[j]){
+//      //                delete arr[i];
+//      //           }
+//      //      }
+//      // }
+//      // return arr.filter(Boolean)
+//      return arr.filter(val => {
+//           return !arr1.includes(val)
+//      })
+// }
+// console.log(destroyer(initialArr,newArr))
+
+// var getIndexToIns = (arr, num) => {
+//      arr.sort((a,b)=>{
+//           return a-b
+//      })
+//      for(var a = 0; a < arr.length;a++){
+//           if(arr[a] >= num){
+//                return a
+//           }
+//      }
+//      return arr.length
+// }
+// console.log(getIndexToIns([1,4,3,2,99],9.5))
+
+// var getIndexToIns = (arr, num) => {
+//      // arr.sort((a,b) => {
+//      //      return a - b
+//      // })
+//      // var i = 0;
+//      // while(num > arr[i]){
+//      //      i++
+//      // }
+//      // return i
+//      /*
+//      arr.push(num);
+//      arr.sort((a,b)=> a-b)
+//      return arr.indexOf(num)*/
+//      var index = arr.sort((a,b)=> a > b).findIndex(curNum => num <= curNum);
+//      return index === -1 ? arr.length : index
+//      console.log("aaa",index)
+// }
+// console.log(getIndexToIns([1,4,3,2,9],89.5))
+
+var caesar = (str) => {
+     // return str.split('')
+     // .map.call(str,char => {
+     //      x = char.charCodeAt(0)
+
+     //      if(x < 65 || x> 90){
+     //           return String.fromCharCode(x)
+     //      } else if(x < 78) {
+     //           return String.fromCharCode(x + 13)
+     //      }
+     //      return String.fromCharCode(x - 13)
+     // }).join('')
+     return str.replace(/[A-Z]/g,L => String.fromCharCode((L.charCodeAt(0) % 26) + 65))
+}
+console.log(caesar('LBH QVQ VG!'))
