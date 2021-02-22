@@ -1,0 +1,366 @@
+// var reversee = (str) => {
+// //     return str.split('').reverse().join('')
+//     /* let reversed = "";
+//      for (var character of str){
+//           reversed = character + reversed
+//      }
+//      return reversed */
+//      // return str.split('').reduce((rev, char) => char+rev, '');
+//      /*newStr = ""
+//      for(var i = str.length - 1; i >= 0;i--){
+//           newStr += str[i]
+//      }
+//      return newStr*/
+//      if(str === ""){
+//           return ""
+//      }else {
+//           return reversee(str.substr(1)) + str.charAt(0)
+//      }
+// }
+// console.log(reversee("Abdullah"))
+
+// POLINDROME - if reverse string is equal to string 
+// var polindrome = (str) => {
+//      // var rev = ""
+//      // for (var i = str.length - 1;i >= 0; i--){
+//      //      rev += str[i]
+//      // }
+//      // return rev === str ? true : false
+//      return str.split('').every((char, i) => {
+//          return char === str[str.length - i - 1]
+//      })
+// }
+// console.log(polindrome("abba"))
+
+// var reverseInt = (n) => {
+//      const reversed = n.toString().split('').reverse().join('')
+//      // if (n < 0) {
+//      //      return parseInt(reversed) * -1
+//      // }
+//      return parseInt(reversed) * Math.sign(n)
+// }
+// console.log(reverseInt(-51))
+
+//forOf used to iterate through array or str..for objects we use forIn
+// var maxChar = (str) => {
+//    const charMap = {}
+//    let max  = 0;
+//    let maxChar = '';
+//    for(let char of str){
+//      if(charMap[char]){
+//           console.log('AA',charMap)
+//           charMap[char]++
+//      } else {
+//           console.log('AA',charMap)
+//           charMap[char] = 1
+//      }
+//    }
+//    for(let char in charMap){
+//      if(charMap[char] > max){
+//           max = charMap[char];
+//           maxChar = char
+//      }
+//  }
+//  return maxChar
+// }
+// console.log(maxChar("ABBAZZqZwer "))
+
+// var fizzBuzz = (n) => {
+//      for(let i = 1; i <= n; i++){
+//         if(i % 3 === 0 && i % 5 === 0){
+//              console.log("fizzBuzz")
+//         } else if(i %3 ===0){
+//              console.log('fizz')
+//         }else if(i % 5 === 0){
+//              console.log("Buzz")
+//         } else{
+//              console.log(i)
+//         }    
+//      }
+// }
+// console.log(fizzBuzz(50))
+
+// var chunk = (arr, size) => {
+//      // const chunked = []
+//      // for(let element of arr){
+//      //      const last = chunked[chunked.length - 1]
+//      //      if(!last || last.length === size){
+//      //           console.log("AA",last)
+//      //           chunked.push([element])
+//      //      } else {
+//      //           console.log("BB",last)
+//      //           last.push(element)
+//      //      }
+//      // }
+//      // return chunked
+//      var chunked = []
+//      let index = 0
+//      while(index < arr.length){
+//           chunked.push(arr.slice(index,index+size))
+//           index += size
+//      }
+//      return chunked
+// }
+// console.log(chunk([1,2,3,4,5,6,7],2))
+
+// var buildCharMap = (str) => {
+//      const charMap = {}
+//      for (let char of str.replace(/[^\w]/g,'').toLowerCase()){
+//           charMap[char] = charMap[char] + 1 || 1
+//      }
+//      return charMap
+// }
+// var anagrams = (strA,strB) => {
+//      const aCharMap = buildCharMap(strA)
+//      const bCharMap = buildCharMap(strB)
+//      if(Object.keys(aCharMap).length !== Object.keys(bCharMap).length){
+//           return false
+//      }
+
+//      for(let char in aCharMap){
+//           if(aCharMap[char] !== bCharMap[char]){
+//                console.log("AA",aCharMap[char],bCharMap[char])
+//                return false
+//           }
+//      }
+//      return true
+// }
+
+// var anagrams = (strA, strB) => {
+//     var AAA = strA.toLowerCase().split('').sort().join('')
+//     var BBB = strB.toLowerCase().split('').sort().join('')
+//     console.log("AA",AAA,BBB)
+//     if(AAA === BBB){
+//          return true
+//     }
+//     return false
+// }
+// console.log(anagrams("hello pin!!!","olleh nip!!!"))
+
+// var capitalize = (str) => {
+//      // var words = []
+//      // for(var  word of str.split(' ')){
+//      //    words.push(word[0].toUpperCase() + word.slice(1))
+//      // }
+//      // return words.join(' ')
+//     let result = str[0].toUpperCase()
+//     for(let i = 1; i < str.length; i++){
+//          if(str[i - 1] === ' '){
+//               result += str[i].toUpperCase()
+//          } else {
+//               result += str[i]
+//          }
+//     } 
+//     return result
+// }
+// console.log(capitalize('any short sentense'))
+
+// var steps = (n) => {
+//  for(let row = 0;row < n;row++){
+//       let stair = ''
+//       for(let column = 0;column < n;column++){
+//           if(column <= row){
+//                stair += '#'
+//           } else {
+//                stair += " "
+//           }
+//       }
+//       console.log(stair)
+//  }
+// }
+// console.log(steps(9))
+
+// var stepsRecursive = (n, row = 0, stair = '') => {
+//      if (n === row) {
+//           return;
+//      }
+//      if(n === stair.length) {
+//           console.log(stair)
+//           return stepsRecursive(n, row + 1)
+//      }
+//      if (stair.length <= row) {
+//           stair += '#'
+//      } else {
+//           stair += ' '
+//      }
+//      stepsRecursive(n, row, stair)
+// }
+// console.log(stepsRecursive(6))
+
+// var pyramid = (n) => {
+//      const midPoint = Math.floor((2 * n - 1) / 2)
+//      for(let row = 0; row < n;row++){
+//           let level = ""
+//           for(let column = 0;column < 2 * n -1;column++) {
+//             if(midPoint - row <= column && midPoint + row >= column){
+//                  level += "$"
+//             } else {
+//                  level += " "
+//             }   
+//           }
+//           console.log(level)
+//      }
+// }
+// console.log(pyramid(6))
+
+// var pyramidRecur = (n, row = 0, level = '') => {
+//      if (row === n) {
+//           return
+//      }
+//      if(level.length === 2 * n - 1) {
+//           console.log(level)
+//           return pyramidRecur(n, row + 1)
+//      }
+//      const midPoint = Math.floor((2 * n -1) / 2)
+//      let add = ""
+//      if (midPoint - row <= level.length && midPoint + row >= level.length) {
+//          add += "$" 
+//      } else {
+//           add += " " 
+//      }
+//      pyramidRecur(n, row, level + add)
+// }
+// console.log(pyramidRecur(3))
+
+// var vowels = (n) => {
+//      let checker = ['a','e','i','o','u']
+//      let count = 0
+//      for(let char of n.toLowerCase()){
+//           if(checker.includes(char)){
+//                count++
+//           }
+//      }
+//      return count
+// }
+// console.log(vowels('Hello Therea'))
+
+// var vowels = (str) => {
+//      const matches = str.match(/[aeiou]/gi);
+//      console.log("AA",matches)
+//      return matches ? matches.length ? 0
+// }
+// console.log(vowels('Hello There'))
+
+// var matrix = (n) => {
+//      const results = []
+//      for(let i = 0; i < n; i++){
+//           results.push([])
+//      }
+//      let counter = 1
+//      let startColumn = 0;
+//      let endColumn = n - 1;
+//      let startRow = 0;
+//      let endRow = n - 1;
+//      while (startColumn <= endColumn && startRow <= endRow){
+//           //top row
+//           for(let i = startColumn; i <= endColumn; i++){
+//                results[startRow][i] = counter;
+//                counter++
+//           }
+//           startRow++
+
+//           // rightColumn
+//           for (let i = startRow; i <= endRow; i++){
+//                results[i][endColumn] = counter;
+//                counter++
+//           }
+//           endColumn--;
+//           //bottomRow
+//           for(let i = endColumn; i >= startColumn; i--){
+//                results[endRow][i] = counter;
+//                counter++
+//           }
+//           endRow--;
+//           //startColumn
+//           for(let i = endRow;i >= startRow; i--){
+//                results[i][startColumn] = counter
+//                counter++
+//           }
+//           startColumn++
+//      }
+//      return results
+// }
+// console.log(matrix(3))
+
+// var fib = (n) => {
+//      const result= [0, 1];
+//      for(let i = 2;i <= n; i++ ){
+//           const a = result[i - 1]
+//           const b = result[i - 2]
+//           result.push(a+b)
+//      }
+//      return result 
+// }
+// console.log(fib(20))
+
+// var memoize = (fn) => {
+//      const cache = {}
+//      return function(...args){
+//           if(cache[args]) {
+//                return cache[args]
+//           }
+//           const result = fn.apply(this, args)
+//           cache[args] = result;
+//           return result;
+//      }
+// }
+// var slowFib = (n) => {
+//      if (n < 2) {
+//           return n
+//      }
+//      return fib(n - 1) + fib(n - 2)
+// }
+// const fib = memoize(slowFib)
+// console.log(slowFib(4))
+
+// class Queue {
+//      constructor() {
+//           this.data = []
+//      }
+//      add(record) {
+//           this.data.unshift(record)
+//      }
+//      remove() {
+//           return this.data.pop()
+//      }
+//      peek() {
+//           return this.data[this.data.length - 1]
+//      }
+// }
+
+// var bubbleSort = (arr) => {
+//      for (let i = 0; i < arr.length; i++) {
+//           for (let j = 0; j < (arr.length - i);j++) {
+//                if (arr[j] > arr[j+1]) {
+//                     const lesser = arr[j+1]
+//                     arr[j+1] = arr[j]
+//                     arr[j] = lesser
+//                }
+//           }
+//      }
+//      return console.log(arr)
+// }
+// bubbleSort([3,8,1,9,4])
+
+var mergeSort = (arr) => {
+     if(arr.length === 1) {
+          return arr
+     }
+     const center = Math.floor(arr.length / 2);
+     const left = arr.slice(0, center);
+     const right = arr.slice(center);
+     return merge(mergeSort(left),mergeSort(right))
+}
+
+var merge = (left, right) => {
+     const results = []
+     while (left.length && right.length) {
+          if (left[0] < right[0]) {
+               results.push(left.shift())
+          } else {
+               results.push(right.shift())
+          }
+     }
+     return [...results, ...left, ...right]
+}
+console.log(mergeSort([8,5,3,6,4,9,1]))
